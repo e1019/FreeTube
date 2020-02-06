@@ -125,7 +125,7 @@
         <div v-for='video in recommendedVideoList'>
             <div class='recommendVideo' v-on:click='play(video.id)'>
                 <div class='recommendThumbnail'>
-                    <img :src='video.thumbnail'></img>
+                    <img :src='video.thumbnail'></img>	
                     <p v-on:click='play(video.id)' class='videoDuration'>{{video.duration}}</p>
                 </div>
                 <p class='recommendTitle'>{{video.title}}</p>

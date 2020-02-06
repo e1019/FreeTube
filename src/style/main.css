@@ -73,6 +73,10 @@ a {
     top: 0;
     left: 0;
     z-index: 4;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(232, 232, 232, 1);
 }
 
 .topNav span {
@@ -143,9 +147,9 @@ a {
     position: absolute;
     right: 30px;
     top: 50px;
-    -webkit-box-shadow: -15px 25px 50px -30px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -15px 25px 50px -30px rgba(0, 0, 0, 0.75);
-    box-shadow: -15px 25px 50px -30px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -15px 25px 50px -30px rgba(232, 232, 232, 1);
+    -moz-box-shadow: -15px 25px 50px -30px rgba(232, 232, 232, 1);
+    box-shadow: -15px 25px 50px -30px rgba(232, 232, 232, 1);
 }
 
 #profileSelectHeader {
@@ -338,9 +342,9 @@ a {
     height: 200px;
     overflow-y: scroll;
     margin-top: -5px;
-    -webkit-box-shadow: -15px 25px 50px -30px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -15px 25px 50px -30px rgba(0, 0, 0, 0.75);
-    box-shadow: -15px 25px 50px -30px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -15px 25px 50px -30px rgba(232, 232, 232, 1);
+    -moz-box-shadow: -15px 25px 50px -30px rgba(232, 232, 232, 1);
+    box-shadow: -15px 25px 50px -30px rgba(232, 232, 232, 1);
 }
 
 .searchSuggestions p {
@@ -364,7 +368,7 @@ a {
     width: 90%;
     padding: 10px;
     margin-bottom: 20px;
-    -webkit-box-shadow: 4px -2px 51px -6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 4px -2px 51px -6px rgba(232, 232, 232, 1);
 }
 
 .searchButton {
@@ -395,7 +399,11 @@ a {
     left: 0;
     top: 0px;
     margin-top: 60px;
-    -webkit-box-shadow: 4px -2px 51px -6px rgba(0, 0, 0, 0.75);
+    /*-webkit-box-shadow: 4px -2px 51px -6px rgba(232, 232, 232, 1);*/
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(232, 232, 232, 1);
 }
 
 #sideNav hr {
@@ -414,6 +422,8 @@ a {
     position: relative;
     right: 50px;
     cursor: pointer;
+	padding-left: 36px;
+	padding-right: 36px;
     -webkit-transition: background 0.2s ease-out;
     -moz-transition: background 0.2s ease-out;
     -o-transition: background 0.2s ease-out;
@@ -498,7 +508,7 @@ a {
     padding: 10px;
     opacity: 0;
     z-index: 1;
-    -webkit-box-shadow: 4px -2px 51px -6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 4px -2px 51px -6px rgba(232, 232, 232, 1);
     -webkit-transition: opacity 0.4s ease-in-out;
     -moz-transition: opacity 0.4s ease-in-out;
     -ms-transition: opacity 0.4s ease-in-out;
@@ -545,9 +555,9 @@ a {
     text-align: center;
     padding: 10px;
     margin-bottom: 30px;
-    -webkit-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 4px 4px 10px 0px rgba(232, 232, 232, 1);
+    -moz-box-shadow: 4px 4px 10px 0px rgba(232, 232, 232, 1);
+    box-shadow: 4px 4px 10px 0px rgba(232, 232, 232, 1);
 }
 
 .help {
@@ -593,7 +603,7 @@ a {
     padding: 10px;
     z-index: 1;
     visibility: hidden;
-    -webkit-box-shadow: 4px -2px 51px -6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 4px -2px 51px -6px rgba(232, 232, 232, 1);
     -webkit-transition: opacity 0.4s ease-in-out;
     -moz-transition: opacity 0.4s ease-in-out;
     -ms-transition: opacity 0.4s ease-in-out;

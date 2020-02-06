@@ -3,6 +3,7 @@ out
 \.idea/
 subscriptions\.db
 .vscode/
+elect/
 .eslintrc*
 *.db
 *.code-workspace

@@ -183,6 +183,7 @@ let subscriptionView = new Vue({
     data: {
         seen: true,
         isSearch: false,
+		hvTitle: 'Latest Subscriptions',
         videoList: [],
         fullVideoList: [],
     },
@@ -228,6 +229,7 @@ let popularView = new Vue({
     data: {
         seen: false,
         isSearch: false,
+		hvTitle: 'Most Popular',
         videoList: []
     },
     methods: {
@@ -271,6 +273,7 @@ let trendingView = new Vue({
     data: {
         seen: false,
         isSearch: false,
+		hvTitle: 'Trending',
         videoList: []
     },
     methods: {
@@ -314,6 +317,7 @@ let savedView = new Vue({
     data: {
         seen: false,
         isSearch: false,
+		hvTitle: 'Favorites',
         videoList: []
     },
     methods: {
@@ -356,6 +360,7 @@ let historyView = new Vue({
     el: '#historyView',
     data: {
         seen: false,
+		hvTitle: 'Watch History',
         isSearch: false,
         videoList: []
     },
@@ -723,6 +728,7 @@ let channelVideosView = new Vue({
     data: {
         seen: false,
         isSearch: true,
+		hvTitle: '',
         page: 2,
         videoList: []
     },
@@ -770,6 +776,7 @@ let channelPlaylistsView = new Vue({
     data: {
         seen: false,
         isSearch: true,
+		hvTitle: '',
         page: 2,
         continuationString: '',
         videoList: []
@@ -796,6 +803,7 @@ let channelSearchView = new Vue({
     data: {
         seen: false,
         channelId: '',
+		hvTitle: '',
         isSearch: true,
         page: 2,
         videoList: []
