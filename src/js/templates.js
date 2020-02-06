@@ -196,7 +196,7 @@ let subscriptionView = new Vue({
             goToChannel(channelId);
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         copyYouTube: (videoId) => {
             const url = 'https://youtube.com/watch?v=' + videoId;
@@ -241,7 +241,7 @@ let popularView = new Vue({
             goToChannel(channelId);
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         copyYouTube: (videoId) => {
             const url = 'https://youtube.com/watch?v=' + videoId;
@@ -285,7 +285,7 @@ let trendingView = new Vue({
             goToChannel(channelId);
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         copyYouTube: (videoId) => {
             const url = 'https://youtube.com/watch?v=' + videoId;
@@ -373,7 +373,7 @@ let historyView = new Vue({
             goToChannel(channelId);
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         copyYouTube: (videoId) => {
             const url = 'https://youtube.com/watch?v=' + videoId;
@@ -428,7 +428,7 @@ let playlistView = new Vue({
             backButtonView.lastView = playlistView
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         openYouTube: (videoId) => {
             const url = 'https://youtube.com/watch?v=' + videoId;
@@ -586,7 +586,7 @@ let searchView = new Vue({
             backButtonView.lastView = searchView
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         copyYouTube: (videoId) => {
             const url = 'https://youtube.com/watch?v=' + videoId;
@@ -741,7 +741,7 @@ let channelVideosView = new Vue({
             goToChannel(channelId);
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         nextPage: () => {
             channelNextPage();
@@ -789,7 +789,7 @@ let channelPlaylistsView = new Vue({
             goToChannel(channelId);
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         nextPage: () => {
             channelPlaylistNextPage();
@@ -820,7 +820,7 @@ let channelSearchView = new Vue({
             showPlaylist(playlistId);
         },
         toggleSave: (videoId) => {
-            addSavedVideo(videoId);
+            toggleSavedVideo(videoId);
         },
         nextPage: () => {
             showToast('Fetching results.  Please wait…');

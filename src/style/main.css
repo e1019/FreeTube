@@ -74,9 +74,11 @@ a {
     left: 0;
     z-index: 4;
 	
-	border-style: solid;
+	/*border-style: solid;
 	border-width: 1px;
-	border-color: rgba(232, 232, 232, 1);
+	border-color: rgba(232, 232, 232, 1);*/
+	
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 .topNav span {
@@ -399,11 +401,14 @@ a {
     left: 0;
     top: 0px;
     margin-top: 60px;
+	overflow-x: hidden;
     /*-webkit-box-shadow: 4px -2px 51px -6px rgba(232, 232, 232, 1);*/
 	
+	/*
 	border-style: solid;
 	border-width: 1px;
-	border-color: rgba(232, 232, 232, 1);
+	border-color: rgba(232, 232, 232, 1);*/
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 #sideNav hr {
@@ -424,16 +429,16 @@ a {
     cursor: pointer;
 	padding-left: 36px;
 	padding-right: 36px;
-    -webkit-transition: background 0.2s ease-out;
-    -moz-transition: background 0.2s ease-out;
-    -o-transition: background 0.2s ease-out;
-    transition: background 0.2s ease-out;
+    -webkit-transition: background 0.0s ease-out;
+    -moz-transition: background 0.0s ease-out;
+    -o-transition: background 0.0s ease-out;
+    transition: background 0.0s ease-out;
 }
 
 #sideNav li:hover {
-    -moz-transition: background 0.2s ease-in;
-    -o-transition: background 0.2s ease-in;
-    transition: background 0.2s ease-in;
+    -moz-transition: background 0.0s ease-in;
+    -o-transition: background 0.0s ease-in;
+    transition: background 0.0s ease-in;
 }
 
 #sideNavDisabled {
@@ -656,7 +661,7 @@ a {
 }
 
 .videoThumbnail:hover .videoWatched {
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 .blogFeed a {

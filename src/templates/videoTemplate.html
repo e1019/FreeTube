@@ -24,21 +24,25 @@
                             <li v-on:click='copyInvidious(video.id)' onclick='showVideoOptions(this.parentNode.previousSibling);'>Copy Invidious Link</li>
                             <li v-on:click='miniPlayer(video.id);' onclick='showVideoOptions(this.parentNode.previousSibling);'>Open in Mini Player</li>
                         </ul>
-                    </div>
-                    <div class='videoThumbnail'>
+                    </div><!--class='videoThumbnail' --> 
+                    <div v-bind:class="{ videoThumbnail: true, videoWatchedThumb: video.watched }">
                         <img v-on:click='play(video.id)' :src='video.thumbnail' />
-                        <p v-on:click='play(video.id)' class='videoDuration'>{{video.duration}}</p>
-                        <i class="fas fa-history videoSave" v-on:click='toggleSave(video.id)'></i>
-                        <div v-if='video.watched' class='videoWatched'>
-                            WATCHED
-                        </div>
-                        <div v-if='video.watched' class='watchedProgressBar' :style='{width: video.progressPercentage + "%"}'></div>
+                        <i class="fas fa-star videoSave" v-on:click='toggleSave(video.id)'></i>
+						<p v-on:click='play(video.id)' class='videoDuration'>{{video.duration}}</p>
+						<p class="videoWatchedTag" v-if="video.watched">WATCHED</p>
+                        <div v-if='video.watched' class='videoWatched'></div>
+						
+
+						<div v-if='video.watched' class='watchedProgressBarContainer'>
+							<div v-if='video.watched' class='watchedProgressBar' :style='{width: video.progressPercentage + "%"}'></div>
+						</div>
+
                     </div>
                     <p v-on:click='play(video.id)' class='videoTitle'>{{video.title}}</p>
                     <p v-on:click='channel(video.channelId)' class='channelName'>{{video.channelName}}</p>
-                    <p v-if='!video.premium' v-on:click='play(video.id)' class='videoViews'>{{video.views}} {{video.viewText}} - {{video.publishedDate}}</p>
+                    <div v-if='!video.premium' v-on:click='play(video.id)' class='videoViews'>{{video.views}} {{video.viewText}} - {{video.publishedDate}} <b v-if="video.liveText" v-on:click='play(video.id)' class='live'>{{video.liveText}}</b></div>
                     <p v-on:click='play(video.id)' class='videoDescription'>{{video.description}}</p>
-                    <p v-on:click='play(video.id)' class='live'>{{video.liveText}}</p>
+
                 </div>
                 <hr class='videoDivider' />
             </div>

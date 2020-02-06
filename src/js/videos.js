@@ -146,7 +146,7 @@ function displayVideo(videoData, listType = '') {
             let now = Date.now();
             video.liveText = '';
 
-            if (video.views <= 1) {
+            if (video.views == 1) {
                 video.viewText = 'view';
             } else {
                 video.viewText = 'views';

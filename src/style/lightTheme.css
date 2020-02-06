@@ -24,7 +24,7 @@
 ::-webkit-scrollbar-thumb {
     background: #BDBDBD;
     -webkit-border-radius: 1ex;
-    -webkit-box-shadow: 0px 1px 1px rgba(232, 232, 232, 1);
+    /*-webkit-box-shadow: 0px 1px 1px rgba(232, 232, 232, 1);*/
 }
 
 ::-webkit-scrollbar-corner {
@@ -69,7 +69,7 @@ body {
 
 .topNav {
     background-color: #ffffff;
-    -webkit-box-shadow: 0px -1px 1px 0px rgba(232, 232, 232, 1);
+    /*-webkit-box-shadow: 0px -1px 1px 0px rgba(232, 232, 232, 1);*/
 }
 
 .searchBar input {
@@ -230,7 +230,7 @@ body {
 
 #sideNav {
     background-color: white;
-    -webkit-box-shadow: 1px -1px 1px -1px rgba(232, 232, 232, 1);
+    /*-webkit-box-shadow: 1px -1px 1px -1px rgba(232, 232, 232, 1);*/
 }
 
 #sideNav hr {
