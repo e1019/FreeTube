@@ -26,8 +26,8 @@ iframe {
 }
 
 .videoPlayer {
-    width: 100%;
-    height: 100%;
+    width: auto !important;
+    height: auto !important;
     touch-action: none;
 }
 
@@ -37,53 +37,96 @@ iframe {
 
 #legacyPlayer {
     max-height: 80vh;
+	width: 100% !important;
+	
 }
 
 .statistics {
+	/*
     padding: 20px;
-    padding-bottom: 45px;
+    padding-bottom: 45px;*/
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
-    font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .views {
-    margin-top: -10px;
-    float: left;
+    font-size: 16px;
+    margin-bottom: 4px;
+    text-align: right;
+	margin-top: 0px;
 }
 
 .details {
-    padding: 15px;
+    padding: 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.details, .statistics {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.all-stats {
+	display: flex;
+}
+
+.left-stats {
+	width: 290px;
+	margin-right: auto;
+	place-self: flex-start;
+}
+
+.right-stats {
+	height: 48px;
+	width: -webkit-fill-available;
+	max-width: 260px;
+	place-self: flex-end;
+	margin-left: auto;
+	padding-left: 16px;
+}
+
+.buttons-stats {
+	height: 30px;
+	padding: 4px;
+	margin-top: -30px;
 }
 
 .likeContainer {
-    width: 300px;
+    width: -webkit-fill-available;
     float: right;
 }
 
+.likes, .dislikes {
+	color: #8a8a8a;
+	margin: 4px;
+	font-size: 10px;
+}
+
 .likes {
-    float: left;
-    font-size: 12px;
+    float: right;
 }
 
 .dislikes {
     float: right;
-    font-size: 12px;
 }
 
 .dislikeBar {
-    background-color: #9E9E9E;
-    width: 300px;
-    height: 5px;
-    margin-bottom: 5px;
+    background-color: #f1f1f1;
+    height: 3px;
+    margin-bottom: 3px;
     border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
 }
 
 .likeBar {
-    height: 5px;
+    height: 3px;
     background-color: #2196F3;
     border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
@@ -91,7 +134,7 @@ iframe {
 
 #channelIcon {
     float: left;
-    width: 80px;
+    width: 48px;
     border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
     cursor: pointer;
@@ -113,31 +156,48 @@ iframe {
 
 #channelName {
     font-weight: bold;
-    margin-left: 95px;
-    font-size: 16px;
+    font-size: 13px;
     cursor: pointer;
+    margin-top: 2px;
+    margin-left: 58px;
 }
 
 #publishDate {
-    margin-left: 95px;
-    font-size: 13px;
-    margin-top: -10px;
+	font-size: 14px;
+	margin: 0;
+	font-weight: bold;
 }
 
 #description {
     white-space: pre-line;
     max-height: 200px;
     overflow-y: auto;
+	font-size: 14px;
 }
 
 .playerSubButton {
-    float: right;
-    width: 195px;
-    height: 50px;
-    line-height: 50px;
+    height: 24px;
+    line-height: 24px;
     text-align: center;
-    margin-top: -65px;
     cursor: pointer;
+    margin-left: 58px;
+    min-width: 160px;
+	font-size: 13px;
+	width: fit-content;
+	color: #eee;
+    background-color: #ff1f1f;
+
+	transition: color .3s ease, background-color .3s ease;
+	
+	margin-top: -8px;
+
+}
+
+.subscribed {
+	color: #616161;
+    background-color: #eeeeee;
+	
+	transition: color .3s ease, background-color .3s ease;
 }
 
 .smallButton {
@@ -267,7 +327,7 @@ iframe {
 }
 
 .recommendTitle {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     margin-left: 177px;
 	margin-top: 0px;
@@ -276,6 +336,11 @@ iframe {
 
 .recommendVideo:hover .recommendTitle {
 	color: #3f7ac6;
+}
+
+.recommendedVideoList {
+	max-width: 418px;
+	justify-content: left;
 }
 
 
@@ -292,4 +357,30 @@ iframe {
     font-size: 11px;
 	margin-top: -10px;
 	color: #767676;
+}
+
+.entirePlayerParent {
+	width: 100%;
+	margin: 16px;
+	display: flex;
+}
+
+.entirePlayer {
+	display: inline-flex;
+    flex-direction: row;
+    margin: auto;
+	align-self: center;
+	max-width: 1500px;
+}
+
+.leftContainer, .rightContainer {
+	margin: 8px;
+}
+
+.leftContainer {
+	flex: 1;
+}
+
+.rightContainer {
+	
 }

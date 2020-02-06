@@ -30,6 +30,8 @@ const {
 const path = require('path');
 const url = require('url');
 
+require('electron-reload')(__dirname.replace("\\js", ""));
+
 const Datastore = require('nedb'); // database logic
 const localDataStorage = app.getPath('userData'); // Grabs the userdata directory based on the user's OS
 
