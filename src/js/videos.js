@@ -243,7 +243,10 @@ function displayVideo(videoData, listType = '') {
             video.removeFromSave = false;
             break;
         }
+		
+		onResizedOrChanged();
     });
+	
 }
 
 function displayChannel(channel) {
@@ -371,6 +374,7 @@ function showMostPopular() {
             displayVideo(video, 'popular');
         });
     });
+
 
     popularTimer = window.setTimeout(() => {
         checkPopular = true;

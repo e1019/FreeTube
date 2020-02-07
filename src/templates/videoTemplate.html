@@ -1,84 +1,90 @@
 <div>
-    <div class='flexGrid' v-if='seen'>
+
+	<div class="flexGrideC" v-if='seen'>
 		<h1>{{ hvTitle }}</h1>
-        <div class='inlineBlock' v-for="video in videoList">
-            <div class='inlineBlock' v-if='video.isVideo'>
-                <div class='video'>
-                    <div class='videoOptions'>
-                        <i class="fas fa-ellipsis-v" onclick='showVideoOptions(this)'></i>
-                        <ul>
-                            <div v-if='video.watched'>
-                                <li v-on:click='history(video.id)' onclick='showVideoOptions(this.parentNode.parentNode.previousSibling);'>Remove From History</li>
-                            </div>
-                            <a :href='video.youtubeUrl' onclick='showVideoOptions(this.parentNode.previousSibling);'>
-                                <li>Open in YouTube</li>
-                            </a>
-                            <li v-on:click='copyYouTube(video.id)' onclick='showVideoOptions(this.parentNode.previousSibling);'>Copy YouTube Link</li>
-                            <a :href='video.youtubeNocookieUrl' onclick='showVideoOptions(this.parentNode.previousSibling);'>
-                                <li>Open in YouTube-NoCookie</li>
-                            </a>
-                            <li v-on:click='copyYouTubeNoCookie(video.id)' onclick='showVideoOptions(this.parentNode.previousSibling);'>Copy YouTube-NoCookie Link</li>
-                            <a :href='video.invidiousUrl' onclick='showVideoOptions(this.parentNode.previousSibling);'>
-                                <li>Open in Invidious</li>
-                            </a>
-                            <li v-on:click='copyInvidious(video.id)' onclick='showVideoOptions(this.parentNode.previousSibling);'>Copy Invidious Link</li>
-                            <li v-on:click='miniPlayer(video.id);' onclick='showVideoOptions(this.parentNode.previousSibling);'>Open in Mini Player</li>
-                        </ul>
-                    </div><!--class='videoThumbnail' --> 
-                    <div v-bind:class="{ videoThumbnail: true, videoWatchedThumb: video.watched }">
-                        <img v-on:click='play(video.id)' :src='video.thumbnail' />
-                        <i class="fas fa-star videoSave" v-on:click='toggleSave(video.id)'></i>
-						<p v-on:click='play(video.id)' class='videoDuration'>{{video.duration}}</p>
-						<p class="videoWatchedTag" v-if="video.watched">WATCHED</p>
-                        <div v-if='video.watched' class='videoWatched'></div>
-						
+		<ul id="flexGrid" class='flexGrid' >
+			<div class='inlineBlock' v-for="video in videoList">
+				<div class='inlineBlock' v-if='video.isVideo'>
+					<div class='video'>
+						<div class='videoOptions'>
+							<i class="fas fa-ellipsis-v" onclick='showVideoOptions(this)'></i>
+							<ul>
+								<div v-if='video.watched'>
+									<li v-on:click='history(video.id)' onclick='showVideoOptions(this.parentNode.parentNode.previousSibling);'>Remove From History</li>
+								</div>
+								<a :href='video.youtubeUrl' onclick='showVideoOptions(this.parentNode.previousSibling);'>
+									<li>Open in YouTube</li>
+								</a>
+								<li v-on:click='copyYouTube(video.id)' onclick='showVideoOptions(this.parentNode.previousSibling);'>Copy YouTube Link</li>
+								<a :href='video.youtubeNocookieUrl' onclick='showVideoOptions(this.parentNode.previousSibling);'>
+									<li>Open in YouTube-NoCookie</li>
+								</a>
+								<li v-on:click='copyYouTubeNoCookie(video.id)' onclick='showVideoOptions(this.parentNode.previousSibling);'>Copy YouTube-NoCookie Link</li>
+								<a :href='video.invidiousUrl' onclick='showVideoOptions(this.parentNode.previousSibling);'>
+									<li>Open in Invidious</li>
+								</a>
+								<li v-on:click='copyInvidious(video.id)' onclick='showVideoOptions(this.parentNode.previousSibling);'>Copy Invidious Link</li>
+								<li v-on:click='miniPlayer(video.id);' onclick='showVideoOptions(this.parentNode.previousSibling);'>Open in Mini Player</li>
+							</ul>
+						</div><!--class='videoThumbnail' --> 
+						<div v-bind:class="{ videoThumbnail: true, videoWatchedThumb: video.watched }">
+							<div class="img-cont">
+								<img v-on:click='play(video.id)' :src='video.thumbnail' />
+							</div>
+							<i class="fas fa-star videoSave" v-on:click='toggleSave(video.id)'></i>
+							<p v-on:click='play(video.id)' class='videoDuration'>{{video.duration}}</p>
+							<p class="videoWatchedTag" v-if="video.watched">WATCHED</p>
+							<div v-if='video.watched' class='videoWatched'></div>
+							
 
-						<div v-if='video.watched' class='watchedProgressBarContainer'>
-							<div v-if='video.watched' class='watchedProgressBar' :style='{width: video.progressPercentage + "%"}'></div>
+							<div v-if='video.watched' class='watchedProgressBarContainer'>
+								<div v-if='video.watched' class='watchedProgressBar' :style='{width: video.progressPercentage + "%"}'></div>
+							</div>
+
 						</div>
+						<p v-on:click='play(video.id)' class='videoTitle'>{{video.title}}</p>
+						<p v-on:click='channel(video.channelId)' class='channelName'>{{video.channelName}}</p>
+						<div v-if='!video.premium' v-on:click='play(video.id)' class='videoViews'>{{video.views}} {{video.viewText}} - {{video.publishedDate}} <b v-if="video.liveText" v-on:click='play(video.id)' class='live'>{{video.liveText}}</b></div>
+						<p v-on:click='play(video.id)' class='videoDescription'>{{video.description}}</p>
 
-                    </div>
-                    <p v-on:click='play(video.id)' class='videoTitle'>{{video.title}}</p>
-                    <p v-on:click='channel(video.channelId)' class='channelName'>{{video.channelName}}</p>
-                    <div v-if='!video.premium' v-on:click='play(video.id)' class='videoViews'>{{video.views}} {{video.viewText}} - {{video.publishedDate}} <b v-if="video.liveText" v-on:click='play(video.id)' class='live'>{{video.liveText}}</b></div>
-                    <p v-on:click='play(video.id)' class='videoDescription'>{{video.description}}</p>
+					</div>
+					<hr class='videoDivider' />
+				</div>
+				<div v-else-if='video.isPlaylist'>
+					<div class='video'>
+						<div class='videoThumbnail'>
+							<img v-on:click='playlist(video.id)' :src='video.thumbnail' />
+							<div class='videoPlaylist' v-on:click='playlist(video.id)'>
+								<span class='videoPlaylistTotals'>{{video.videoCount}}</span>
+								<i class='fas fa-list-ol videoPlaylistIcon'></i>
+							</div>
+						</div>
+						<p v-on:click='playlist(video.id)' class='videoTitle'>{{video.title}}</p>
+						<p v-on:click='channel(video.channelId)' class='channelName'>{{video.channelName}}</p>
+						<p v-on:click='playlist(video.id)' class='videoDescription'>{{video.description}}</p>
+						<p v-on:click='playlist(video.id)' class='viewPlaylist'>VIEW FULL PLAYLIST ({{video.videoCount}} videos)</p>
+					</div>
+					<hr class='videoDivider' />
+				</div>
+				<!-- Channel View -->
+				<div v-else>
+					<div class='video'>
+						<div class='channelThumbnail'>
+							<img v-on:click='channel(video.channelId)' :src='video.thumbnail' />
+						</div>
+							<p v-on:click='channel(video.channelId)' class='videoTitle'>{{video.channelName}}</p>
+							<p v-on:click='channel(video.channelId)' class='channelName'>{{video.subscriberCount}} subscribers - {{video.videoCount}} videos</p>
+							<p v-on:click='channel(video.channelId)' class='videoDescription'>{{video.channelDescription}}</p>
+						<hr class='videoDivider' />
+					</div>
+				</div>
+				<div class='getNextPage' v-if='isSearch'>
+					<div v-on:click='nextPage' id='getNextPage'>
+						<i class="fas fa-search"></i> Fetch more results…
+					</div>
+				</div>
+			</div>
+		</ul>
+	</div>
 
-                </div>
-                <hr class='videoDivider' />
-            </div>
-            <div v-else-if='video.isPlaylist'>
-                <div class='video'>
-                    <div class='videoThumbnail'>
-                        <img v-on:click='playlist(video.id)' :src='video.thumbnail' />
-                        <div class='videoPlaylist' v-on:click='playlist(video.id)'>
-                            <span class='videoPlaylistTotals'>{{video.videoCount}}</span>
-                            <i class='fas fa-list-ol videoPlaylistIcon'></i>
-                        </div>
-                    </div>
-                    <p v-on:click='playlist(video.id)' class='videoTitle'>{{video.title}}</p>
-                    <p v-on:click='channel(video.channelId)' class='channelName'>{{video.channelName}}</p>
-                    <p v-on:click='playlist(video.id)' class='videoDescription'>{{video.description}}</p>
-                    <p v-on:click='playlist(video.id)' class='viewPlaylist'>VIEW FULL PLAYLIST ({{video.videoCount}} videos)</p>
-                </div>
-                <hr class='videoDivider' />
-            </div>
-            <!-- Channel View -->
-            <div v-else>
-                <div class='video'>
-                    <div class='channelThumbnail'>
-                        <img v-on:click='channel(video.channelId)' :src='video.thumbnail' />
-                    </div>
-                        <p v-on:click='channel(video.channelId)' class='videoTitle'>{{video.channelName}}</p>
-                        <p v-on:click='channel(video.channelId)' class='channelName'>{{video.subscriberCount}} subscribers - {{video.videoCount}} videos</p>
-                        <p v-on:click='channel(video.channelId)' class='videoDescription'>{{video.channelDescription}}</p>
-                    </div>
-                    <hr class='videoDivider' />
-                </div>
-            </div>
-            <div class='getNextPage' v-if='isSearch'>
-                <div v-on:click='nextPage' id='getNextPage'>
-                    <i class="fas fa-search"></i> Fetch more results…
-                </div>
-            </div>
-        </div>
-    </div>
+</div>

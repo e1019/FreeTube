@@ -67,8 +67,21 @@ electron.ipcRenderer.on('proxyAvailable', function (event, message) {
     proxyAvailable = true;
 });
 
+function onResizedOrChanged(){
+	let a = document.getElementById('flexGrid');
+	if(!a){
+		return;
+	}
+	a.style.display = 'inline';
+	a.style.width = a.getBoundingClientRect().width + 'px';
+	a.style.display = '';
+}
+
 $(document).ready(() => {
-    const searchBar = document.getElementById('search');
+	$( window ).resize(onResizedOrChanged);
+  
+
+	const searchBar = document.getElementById('search');
     const jumpToInput = document.getElementById('jumpToInput');
 
     // Displays the list of subscriptions in the side bar.
@@ -172,6 +185,8 @@ function toggleSideNavigation() {
         currentWindow.setBounds(newBounds);
         currentWindow.setBounds(bounds);
     }
+	
+	onResizedOrChanged();
 }
 
 /**
@@ -306,3 +321,5 @@ function proxyRequest(callback) {
         }
     }, 100);
 }
+
+
