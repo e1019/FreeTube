@@ -142,7 +142,7 @@ body {
 }
 
 .views {
-    color: #424242;
+    color: #525252;
 }
 
 .details {
@@ -261,7 +261,7 @@ body {
 }
 
 #showComments {
-    background-color: #eeeeee;
+	
 }
 
 #toast {
@@ -278,7 +278,7 @@ body {
 }
 
 #comments {
-    background: #eee;
+    background-color: #fff;
 }
 
 #miniPL {
@@ -291,4 +291,8 @@ body {
 
 #profileSelectHeader span:hover {
     background-color: #f1f1f1;
+}
+
+.line-last {
+	opacity: 1;
 }

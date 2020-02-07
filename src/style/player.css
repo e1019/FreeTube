@@ -140,10 +140,16 @@ iframe {
     cursor: pointer;
 }
 
+#comments {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 #comments .line {
     clear: both;
     height: 1px;
     background: #d8d8d8;
+	
 }
 
 .userIcon {
@@ -300,8 +306,8 @@ iframe {
     text-align: center;
     height: 40px;
     line-height: 40px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 #recommendations {
@@ -360,7 +366,8 @@ iframe {
 }
 
 .entirePlayerParent {
-	width: 100%;
+	width: auto;
+	max-width: 100%;
 	margin: 16px;
 	display: flex;
 }
@@ -370,11 +377,12 @@ iframe {
     flex-direction: row;
     margin: auto;
 	align-self: center;
-	max-width: 1500px;
+	max-width: 1620px;
+	flex: 1;
 }
 
 .leftContainer, .rightContainer {
-	margin: 8px;
+	margin: 4px;
 }
 
 .leftContainer {

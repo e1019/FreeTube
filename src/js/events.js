@@ -26,23 +26,29 @@
  */
 let showComments = function (event, continuation = '') {
     let comments = $('#comments');
+	
 
     if (comments.css('display') === 'none') {
         comments.attr('loaded', 'true');
 
-        invidiousAPI('comments', $('#comments').attr('data-video-id'), {}, (data) => {
+        invidiousAPI('comments', $('#comments').attr('data-video-id'), { }, (data) => {
             ft.log(data);
+			
+			$("#showComments").hide();
 
             let comments = [];
 
-            data.comments.forEach((object) => {
-
+            data.comments.forEach((object, idx) => {
                 let snippet = {
                     author: object.author,
                     authorId: object.authorId,
-                    authorThumbnail: object.authorThumbnails[0].url,
+                    authorThumbnail: (!!object.authorThumbnails) ? object.authorThumbnails[0].url : "",
                     published: object.publishedText,
                     authorComment: object.content,
+					likeCount: object.likeCount,
+					authorIsChannelOwner: object.authorIsChannelOwner,
+					
+					lineClass: ((idx + 1) == data.comments.length) ? "line-last" : "line",
                 }
 
                 comments.push(snippet);
